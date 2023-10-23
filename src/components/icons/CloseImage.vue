@@ -1,0 +1,20 @@
+<template>
+  <g id="close">
+    <rect
+      id="Rectangle 66"
+      width="19.2846"
+      height="1.92846"
+      rx="0.96423"
+      transform="matrix(0.707104 0.707109 -0.707104 0.707109 1.36353 0)"
+      fill="#333333"
+    />
+    <rect
+      id="Rectangle 67"
+      width="19.2846"
+      height="1.92846"
+      rx="0.96423"
+      transform="matrix(0.707104 -0.707109 0.707104 0.707109 0 13.6364)"
+      fill="#333333"
+    />
+  </g>
+</template>

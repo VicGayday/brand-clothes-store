@@ -1,0 +1,16 @@
+@import "reset.css";
+@import "variables.css";
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+body {
+  color: var(--text-primary);
+  font: var(--font-m);
+  margin: 0 auto;
+  max-width: 1920px;
+  min-height: 769px;
+  background: var(--background-primary);
+}
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
