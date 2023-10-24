@@ -35,7 +35,6 @@ export default defineComponent({
     console.log("goodsCh", goodsChunk, page)
 
     function nextPage() {
-      console.log("store", page)
       store.setNextPage()
     }
 
@@ -45,7 +44,6 @@ export default defineComponent({
 
     onMounted(() => {
       store.fetchGoods()
-      // store.getData()
     })
     return {
       store,
@@ -63,7 +61,6 @@ export default defineComponent({
 <style scoped>
 .wrapper-product {
   display: flex;
-  /* flex-wrap: wrap; */
   gap: 10px;
   justify-content: space-around;
   align-items: flex-start;
@@ -71,6 +68,10 @@ export default defineComponent({
 }
 .btn {
   padding: 3px 18px;
+  color: #6A6A6A;
+  box-shadow: 0px 4px 4px 0px #00000040;
+  background-color: #FFFFFF;
+  border: none;
 }
 .error {
   display: flex;
@@ -82,5 +83,13 @@ export default defineComponent({
 .error-text {
   color: red;
   font: var(--font-l);
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  padding: 0 30px;;
 }
 </style>

@@ -17,7 +17,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, computed } from "vue"
+import { defineComponent } from "vue"
 import { useBasketStore } from "@/stores/basketStore"
 import CloseImage from "./icons/CloseImage.vue"
 import SvgIcon from "./ui/SvgIcon.vue"

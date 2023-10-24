@@ -25,11 +25,6 @@ export const useGoodsStore = defineStore("goodsStore", {
     },
   },
   actions: {
-    //вместо api
-    getData() {
-      this.listOfGoods = data
-    },
-
     async fetchGoods() {
       try {
         const response = await axios(
