@@ -2,13 +2,13 @@ import { defineStore } from "pinia"
 
 interface State {
   listOfBasket: any[]
-  count: number
+  msg: string
 }
 
 export const useBasketStore = defineStore("basketStore", {
   state: (): State => ({
     listOfBasket: [],
-    count: 0,
+    msg: "",
   }),
 
   getters: {
@@ -20,10 +20,18 @@ export const useBasketStore = defineStore("basketStore", {
   actions: {
     addItem(product: any) {
       this.listOfBasket.push(product)
+      this.msg = `Добавлено: ${product.title}`
     },
+
     removeItem(product: any) {
+      this.msg = `Удалено: ${product.title}`
+
       const i = this.listOfBasket.findIndex((s) => s.id === product.id)
       if (i > -1) this.listOfBasket.splice(i, 1)
+    },
+
+    clearMsg() {
+      this.msg = ""
     },
   },
 })

@@ -1,17 +1,17 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router"
-import MainPage from "../views/MainPage.vue"
-import Basket from "../views/Basket.vue"
+import MainPageView from "../views/MainPageView.vue"
+import BasketView from "../views/BasketView.vue"
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
     name: "MainPage",
-    component: MainPage,
+    component: MainPageView,
   },
   {
     path: "/basket",
     name: "Basket",
-    component: Basket,
+    component: BasketView,
   },
 ]
 

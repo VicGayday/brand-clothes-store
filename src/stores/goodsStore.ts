@@ -16,8 +16,6 @@ export const useGoodsStore = defineStore("goodsStore", {
   }),
   getters: {
     getGoods(state) {
-      console.log("22", state.page)
-
       return state.listOfGoods.slice(
         (state.page - 1) * 4,
         (state.page - 1) * 4 + 4
@@ -46,12 +44,23 @@ export const useGoodsStore = defineStore("goodsStore", {
       }
     },
 
+    getData() {
+      this.listOfGoods = data
+    },
+
     setNextPage() {
       //если текущая страница все еще меньше общего кол-ва страниц
       if (this.page + 1 < this.listOfGoods.length / 4) {
-        this.page++
+        this.page += 1
       } else {
-        this.errorMsg = "нет больше товаров"
+        this.errorMsg = "Нет больше товаров"
+      }
+    },
+
+    setPreviousPage() {
+      // Если текущая страница больше 1
+      if (this.page - 1 >= 1) {
+        this.page -= 1
       }
     },
 

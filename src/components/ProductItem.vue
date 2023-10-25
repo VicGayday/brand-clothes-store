@@ -10,7 +10,7 @@
           {{ `${product.price} ₽` }}
         </div>
         <button class="btn" @click="addProduct">
-          <svg-icon width="17" height="20" icon-name="basket">
+          <svg-icon width="17" height="20" icon-name="Добавить в корзину">
             <basket-image />
           </svg-icon>
         </button>
@@ -57,7 +57,7 @@ export default defineComponent({
   align-items: flex-start;
   display: flex;
   flex-direction: column;
-   height: calc(100vh - 500px);
+  height: calc(100vh - 500px);
 }
 .title {
   font: var(--font-l);
@@ -66,11 +66,9 @@ export default defineComponent({
 .desc {
   font: var(--font-s);
   color: var(--text-primary-sub);
-  text-overflow: ellipsis;
   overflow: hidden;
-  height: 100px;
-  width: 220px;
-  white-space: nowrap;
+  overflow-y: scroll;
+  white-space: pre-line;
   display: inline-block;
 }
 .footer {

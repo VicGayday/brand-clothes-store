@@ -1,5 +1,6 @@
 <template>
   <div class="wrapper-basket" v-if="basketLength">
+    <span class="msg">{{ basketStore.msg }}</span>
     <BasketItem
       v-for="product in basketList"
       :key="product.id"
@@ -10,19 +11,23 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from "vue"
+import { defineComponent, computed, onMounted } from "vue"
 import { useBasketStore } from "@/stores/basketStore"
 import BasketItem from "@/components/BasketItem.vue"
 
 export default defineComponent({
-  name: "Basket",
+  name: "BasketView",
   components: { BasketItem },
   setup() {
     const basketStore = useBasketStore()
     const basketList = computed(() => basketStore.listOfBasket)
     const basketLength = computed(() => basketStore.basketLength)
 
-    return { basketList, basketLength }
+    onMounted(() => {
+      basketStore.clearMsg()
+    })
+
+    return { basketList, basketLength, basketStore }
   },
 })
 </script>

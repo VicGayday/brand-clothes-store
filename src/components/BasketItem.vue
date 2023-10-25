@@ -3,7 +3,7 @@
     <img src="../assets/product.jpg" alt="product" />
     <div class="inner">
       <button class="btn" @click="removeProduct">
-        <svg-icon width="17" height="20" icon-name="basket">
+        <svg-icon width="17" height="20" icon-name="удалить из корзины">
           <close-image />
         </svg-icon>
       </button>
@@ -60,7 +60,7 @@ export default defineComponent({
 }
 .desc {
   justify-self: flex-start;
-  overflow: scroll;
+  overflow-y: scroll;
   font: var(--font-s);
   color: var(--text-primary-sub);
   margin-right: 10px;
@@ -75,5 +75,17 @@ export default defineComponent({
   border: none;
   outline: none;
   background-color: transparent;
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    width: 280px;
+    height: 500px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 280px 1fr;
+    gap: 20px;
+    box-shadow: var(--box-shadow);
+  }
 }
 </style>
